@@ -3,7 +3,7 @@ Theme Name: Timeless
 Author: Joey J
 Author URI: http://lastlights.net/
 Description: Timeless is a clean double column theme elegantly handcrafted for bloggers and photographers alike. It’s responsive, hi-res and equipped with fancyBox3 (lightbox).
-Version: 1.1
+Version: 1.11
 Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @lastlightsnet), Font Awesome (SIL open font license), Google Fonts (SIL open font license)
 -->
 <html>
@@ -82,6 +82,10 @@ Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @
 <meta name="text:Pinterest URL" content="">
 <meta name="text:Flickr URL" content="">
 <meta name="text:500px URL" content="">
+<meta name="text:LinkedIn URL" content="">
+<meta name="text:RSS URL" content="">
+<meta name="text:SoundCloud URL" content="">
+<meta name="text:Vimeo URL" content="">
 <meta name="text:Kofi URL" content="">
 <meta name="text:Google analytics ID" content="">
 {/block:Hidden}
@@ -112,7 +116,7 @@ $.fancybox.defaults.buttons = [
 <script type="text/javascript">
 $('.photoset-grid').photosetGrid();
 </script>
-<script type="text/javascript" src="http://static.tumblr.com/wgijwsy/jgemkyt9x/jquery.photoset-grid.min.js">
+<script type="text/javascript" src="https://static.tumblr.com/wgijwsy/jgemkyt9x/jquery.photoset-grid.min.js">
 </script>
 
 <!-- google analytics -->
@@ -228,8 +232,12 @@ a:hover {
     line-height: 140%;
     text-transform: uppercase;}
 
-.textwidget {
+.sidebar_b20 {
 	margin-bottom: 20px;}
+
+.social_links {
+    margin-bottom: 2px;
+    margin-left: 8px;}
 
 /* search form */
 input[type="submit"] {
@@ -621,6 +629,13 @@ html, body {
 .self {
 	margin-right: 0;}
 
+.social_links {
+    margin-left: 4px;
+    margin-right: 4px;}
+
+.sidebar_t18 {
+    margin-top: 18px;}
+
 /* others */
 {block:IfDisableFancyBoxOnMobileTheme}
 .nofancybox {
@@ -715,21 +730,18 @@ html, body {
     </div><!-- .blog_title -->
 	{/block:ShowTitle}
 	<p>{Description}</p>
-    <div class="menu textwidget desktop_only">
+    <div class="menu sidebar_b20 desktop_only">
         <a href="/">Home</a>{block:AskEnabled}<br><a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}<br><a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}{block:IfShowArchiveLink}<br><a href="/archive">Archive</a>{/block:IfShowArchiveLink}{block:HasPages}<br>{block:Pages}<a href="{URL}">{Label}</a><br>{/block:Pages}{/block:HasPages}
-    </div><!-- .menu textwidget desktop_only -->
-    <div class="textwidget desktop_only">
+    </div><!-- .menu sidebar_b20 desktop_only -->
+    <div class="sidebar_b20 desktop_only">
         <form action="/search" method="get">
             <input type="text" name="q" value="{SearchQuery}" class="searchform">
             <input type="submit" value="Search">
         </form>
-    </div><!-- .textwidget desktop_only -->
-    <div class="textwidget desktop_only">
-        {block:ifInstagramURL}&nbsp;&nbsp;<a href="{text:Instagram URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/I8apczbkm/instagram.svg" alt="Find me on Instagram" title="Find me on Instagram" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifInstagramURL}{block:ifYouTubeURL}&nbsp;&nbsp;<a href="{text:YouTube URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/xkEpcz5cy/youtube.svg" alt="Find me on YouTube" title="Find me on YouTube" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifYouTubeURL}{block:ifFacebookURL}&nbsp;&nbsp;<a href="{text:Facebook URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/183pcz2er/facebook.svg" alt="Find me on Facebook" title="Find me on Facebook" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifFacebookURL}{block:ifTwitterURL}&nbsp;&nbsp;<a href="{text:Twitter URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/Tc3pcz2f0/twitter.svg" alt="Find me on Twitter" title="Find me on Twitter" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifTwitterURL}{block:ifGooglePlusURL}&nbsp;&nbsp;<a href="{text:GooglePlus URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/288pcz2fb/googleplus.svg" alt="Find me on Google Plus" title="Find me on Google Plus" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifGooglePlusURL}{block:ifPinterestURL}&nbsp;&nbsp;<a href="{text:Pinterest URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/DFfpcz2hj/pinterest.svg" alt="Find me on Pinterest" title="Find me on Pinterest" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifPinterestURL}{block:ifFlickrURL}&nbsp;&nbsp;<a href="{text:Flickr URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/A7Opcz2e6/flickr.svg" alt="Find me on Flickr" title="Find me on Flickr" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifFlickrURL}{block:if500pxURL}&nbsp;&nbsp;<a href="{text:500px URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/doNpcz2ck/500px.svg" alt="Find me on 500px" title="Find me on 500px" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:if500pxURL}{block:ifKofiURL}&nbsp;&nbsp;<a href="{text:Kofi URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/JaYpgmsof/ko-fi.svg" alt="Find me on Ko-fi" title="Find me on Ko-fi" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifKofiURL}
-    </div><!-- .textwidget desktop_only -->
-    <div class="mobile_only" style="margin-top: 20px;">
-        {block:ifInstagramURL}&nbsp;&nbsp;<a href="{text:Instagram URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/I8apczbkm/instagram.svg" alt="Find me on Instagram" title="Find me on Instagram" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifInstagramURL}{block:ifYouTubeURL}&nbsp;&nbsp;<a href="{text:YouTube URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/xkEpcz5cy/youtube.svg" alt="Find me on YouTube" title="Find me on YouTube" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifYouTubeURL}{block:ifFacebookURL}&nbsp;&nbsp;<a href="{text:Facebook URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/183pcz2er/facebook.svg" alt="Find me on Facebook" title="Find me on Facebook" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifFacebookURL}{block:ifTwitterURL}&nbsp;&nbsp;<a href="{text:Twitter URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/Tc3pcz2f0/twitter.svg" alt="Find me on Twitter" title="Find me on Twitter" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifTwitterURL}{block:ifGooglePlusURL}&nbsp;&nbsp;<a href="{text:GooglePlus URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/288pcz2fb/googleplus.svg" alt="Find me on Google Plus" title="Find me on Google Plus" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifGooglePlusURL}{block:ifPinterestURL}&nbsp;&nbsp;<a href="{text:Pinterest URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/DFfpcz2hj/pinterest.svg" alt="Find me on Pinterest" title="Find me on Pinterest" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifPinterestURL}{block:ifFlickrURL}&nbsp;&nbsp;<a href="{text:Flickr URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/A7Opcz2e6/flickr.svg" alt="Find me on Flickr" title="Find me on Flickr" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifFlickrURL}{block:if500pxURL}&nbsp;&nbsp;<a href="{text:500px URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/doNpcz2ck/500px.svg" alt="Find me on 500px" title="Find me on 500px" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:if500pxURL}{block:ifKofiURL}&nbsp;&nbsp;<a href="{text:Kofi URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/JaYpgmsof/ko-fi.svg" alt="Find me on Ko-fi" title="Find me on Ko-fi" style="margin-bottom: 10px;" width="30" height="30"></a>{/block:ifKofiURL}&nbsp;&nbsp;
-    </div><!-- .mobile_only -->
+    </div><!-- .sidebar_b20 desktop_only -->
+    <div class="sidebar_b20 sidebar_t18">
+        {block:ifInstagramURL}<a href="{text:Instagram URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/I8apczbkm/instagram.svg" alt="Find me on Instagram" title="Find me on Instagram" class="social_links" width="30" height="30"></a>{/block:ifInstagramURL}{block:ifYouTubeURL}<a href="{text:YouTube URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/xkEpcz5cy/youtube.svg" alt="Find me on YouTube" title="Find me on YouTube" class="social_links" width="30" height="30"></a>{/block:ifYouTubeURL}{block:ifFacebookURL}<a href="{text:Facebook URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/183pcz2er/facebook.svg" alt="Find me on Facebook" title="Find me on Facebook" class="social_links" width="30" height="30"></a>{/block:ifFacebookURL}{block:ifTwitterURL}<a href="{text:Twitter URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/Tc3pcz2f0/twitter.svg" alt="Find me on Twitter" title="Find me on Twitter" class="social_links" width="30" height="30"></a>{/block:ifTwitterURL}{block:ifGooglePlusURL}<a href="{text:GooglePlus URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/288pcz2fb/googleplus.svg" alt="Find me on Google Plus" title="Find me on Google Plus" class="social_links" width="30" height="30"></a>{/block:ifGooglePlusURL}{block:ifPinterestURL}<a href="{text:Pinterest URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/DFfpcz2hj/pinterest.svg" alt="Find me on Pinterest" title="Find me on Pinterest" class="social_links" width="30" height="30"></a>{/block:ifPinterestURL}{block:ifFlickrURL}<a href="{text:Flickr URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/A7Opcz2e6/flickr.svg" alt="Find me on Flickr" title="Find me on Flickr" class="social_links" width="30" height="30"></a>{/block:ifFlickrURL}{block:if500pxURL}<a href="{text:500px URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/doNpcz2ck/500px.svg" alt="Find me on 500px" title="Find me on 500px" class="social_links" width="30" height="30"></a>{/block:if500pxURL}{block:ifLinkedInURL}<a href="{text:LinkedIn URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/mS2pl0gd1/webicon-linkedin.svg" alt="Find me on LinkedIn" title="Find me on LinkedIn" class="social_links" width="30" height="30"></a>{/block:ifLinkedInURL}{block:ifRSSURL}<a href="{text:RSS URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/ymypl0gdj/webicon-rss.svg" alt="Subscribe to RSS" title="Subscribe to RSS" class="social_links" width="30" height="30"></a>{/block:ifRSSURL}{block:ifSoundCloudURL}<a href="{text:SoundCloud URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/6R9pl0gdu/webicon-soundcloud.svg" alt="Find me on SoundCloud" title="Find me on SoundCloud" class="social_links" width="30" height="30"></a>{/block:ifSoundCloudURL}{block:ifVimeoURL}<a href="{text:Vimeo URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/eUWpl0ge5/webicon-vimeo.svg" alt="Find me on Vimeo" title="Find me on Vimeo" class="social_links" width="30" height="30"></a>{/block:ifVimeoURL}{block:ifKofiURL}<a href="{text:Kofi URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/JaYpgmsof/ko-fi.svg" alt="Find me on Ko-fi" title="Find me on Ko-fi" class="social_links" width="30" height="30"></a>{/block:ifKofiURL}
+    </div><!-- .sidebar_b20 sidebar_t18 -->
     </div><!-- #sidebar -->
 	<div id="content">
 {block:TagPage}
@@ -763,7 +775,7 @@ html, body {
 {/block:Text}
 {block:Photo}
     <div class="post">
-        <a class="photopost nofancybox" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="500" height="auto"></a>
+        <a class="photopost nofancybox" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="100%" height="auto"></a>
         {block:IfDisableFancyBoxOnMobileTheme}
         <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="mobile_only" width="100%" height="auto">
         {/block:IfDisableFancyBoxOnMobileTheme}
@@ -788,7 +800,7 @@ html, body {
     <div class="post">
     <div class="photoset-grid" data-layout="{PhotosetLayout}">
         {block:Photos}
-        <a class="photopost nofancybox" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="500" height="auto"></a>
+        <a class="photopost nofancybox" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="100%" height="auto"></a>
         {block:IfDisableFancyBoxOnMobileTheme}
         <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="mobile_only" style="margin-bottom: 10px;" width="100%" height="auto">
         {/block:IfDisableFancyBoxOnMobileTheme}
@@ -867,7 +879,7 @@ html, body {
 {/block:IfShowLikeAndReblogButtons}
     <div class="post_meta tag_block">
 		{block:Date}
-		<span>Posted <a title="" href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a title="" href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom}  Reblogged from <a title="" href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} Share on <a href="http://www.facebook.com/share.php?u={Permalink}" target="_blank">Facebook</a> <a href="http://twitter.com/home?status=Now viewing {Permalink}" target="_blank">Twitter</a> <a href="https://plus.google.com/share?url={Permalink}" target="_blank">G+</a> {block:IfShowTags}{block:HasTags}Tags {block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
+		<span>Posted <a title="" href="{Permalink}">{DayOfMonth} {ShortMonth} {Year}</a>{block:NoteCount} Notes <a title="" href="{Permalink}#notes">{NoteCount}</a>{/block:NoteCount}{block:RebloggedFrom}  Reblogged from <a title="" href="{ReblogParentURL}">{ReblogParentName}</a>{/block:RebloggedFrom} Share on <a href="https://www.facebook.com/share.php?u={Permalink}" target="_blank">Facebook</a> <a href="https://twitter.com/home?status=Now viewing {Permalink}" target="_blank">Twitter</a> <a href="https://plus.google.com/share?url={Permalink}" target="_blank">G+</a> {block:IfShowTags}{block:HasTags}Tags {block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}{/block:HasTags}{/block:IfShowTags}</span>
 		{/block:Date}
     </div><!-- .post_meta tag_block -->
 {block:PermalinkPagination}
@@ -905,7 +917,7 @@ html, body {
     </div><!-- #content -->
     <div class="footer">
         <div class="footer_inside">
-            <span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40972/">Timeless theme</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; Powered by <a href="http://www.tumblr.com">Tumblr</a></span>
+            <span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40972/">Timeless theme</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; Powered by <a href="https://www.tumblr.com">Tumblr</a></span>
         </div><!-- .footer_inside -->
 	</div><!-- .footer -->
 	</div><!-- #container -->
