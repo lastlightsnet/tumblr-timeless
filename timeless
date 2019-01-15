@@ -3,7 +3,7 @@ Theme Name: Timeless
 Author: Joey J
 Author URI: http://lastlights.net/
 Description: Timeless is a clean double column theme elegantly handcrafted for bloggers and photographers alike. It’s responsive, hi-res and equipped with fancyBox3 (lightbox).
-Version: 1.11
+Version: 1.12
 Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @lastlightsnet), Font Awesome (SIL open font license), Google Fonts (SIL open font license)
 -->
 <html>
@@ -176,9 +176,6 @@ img {
 body {
     background-color:{color:Body background};
     color: {color:Body and description text};
-    font-family: {font:Body and description font};
-    font-size: {select:Description font size};
-	line-height: 160%;
 	margin: 0 auto;}
 
 a, a:link, a:visited {
@@ -224,6 +221,11 @@ a:hover {
 
 .blog_title a {
     color: {color:Title};}
+
+.tag_line {
+    font-family: {font:Body and description font};    
+    font-size: {select:Description font size};
+    line-height: 160%;}
 
 .menu {
     font-family: 'Oswald', sans-serif;
@@ -351,7 +353,7 @@ h1.post_title:after {
     font-family: {font:Body and description font};
     font-size: {select:Body font size};
     letter-spacing: 0.01em;
-    line-height: 170%;
+	line-height: 170%;    
     padding: 20px 0 0 0;}
 
 .caption_padding a,
@@ -461,6 +463,7 @@ blockquote {
 /* post notes */
 .notes {
     color: {color:Post meta and notes text};
+    font-family: {font:Body and description font};
     font-size: 12px;
     margin: 50px 0 0 0;
     padding: 0;}
@@ -729,7 +732,7 @@ html, body {
         <a href="/">{Title}</a>
     </div><!-- .blog_title -->
 	{/block:ShowTitle}
-	<p>{Description}</p>
+	<p class="tag_line">{Description}</p>
     <div class="menu sidebar_b20 desktop_only">
         <a href="/">Home</a>{block:AskEnabled}<br><a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}<br><a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}{block:IfShowArchiveLink}<br><a href="/archive">Archive</a>{/block:IfShowArchiveLink}{block:HasPages}<br>{block:Pages}<a href="{URL}">{Label}</a><br>{/block:Pages}{/block:HasPages}
     </div><!-- .menu sidebar_b20 desktop_only -->
