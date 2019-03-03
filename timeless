@@ -3,8 +3,8 @@ Theme Name: Timeless
 Author: Joey J
 Author URI: http://lastlights.net/
 Description: Timeless is a clean double column theme elegantly handcrafted for bloggers and photographers alike. It’s responsive, hi-res and equipped with fancyBox3 (lightbox).
-Version: 1.2
-Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @lastlightsnet), Zack Sultan for media resizing scripts, Font Awesome (SIL open font license), Google Fonts (SIL open font license)
+Version: 1.21
+Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @lastlightsnet), PXU Photoset Extended (MIT license), Zack Sultan for media resizing scripts, Font Awesome (SIL open font license), Google Fonts (SIL open font license)
 -->
 <html>
 <head>
@@ -22,12 +22,16 @@ Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @
 <meta name="color:Title" content="#a8c3c3">
 <meta name="color:Links" content="#8aaea5">
 <meta name="color:Links hover" content="#a8c3c3">
+<meta name="color:Post meta and notes text" content="#b1b1b1">
+<meta name="color:Post meta links background" content="#eeeeee">
 <meta name="color:Footer background" content="#353535">
 <meta name="color:Footer text" content="#777777">
-<meta name="color:Post meta and notes text" content="#b1b1b1">
 <meta name="color:Border" content="#efefef">
+<meta name="color:Post navigation links background" content="#eeeeee">
 <meta name="color:Menu bar icon" content="#353535">
 <meta name="font:Blog title font" content="Alternate Gothic">
+<meta name="font:Body and description font" content="Georgia">
+<meta name="font:Footer font" content="Georgia">
 <meta name="select:Title font size" content="24px" title="24px">
 <meta name="select:Title font size" content="12px" title="12px">
 <meta name="select:Title font size" content="14px" title="14px">
@@ -39,15 +43,6 @@ Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @
 <meta name="select:Title font size" content="28px" title="28px">
 <meta name="select:Title font size" content="30px" title="30px">
 <meta name="select:Title font size" content="32px" title="32px">
-<meta name="font:Body and description font" content="Georgia">
-<meta name="select:Body font size" content="14px" title="14px">
-<meta name="select:Body font size" content="10px" title="10px">
-<meta name="select:Body font size" content="12px" title="12px">
-<meta name="select:Body font size" content="16px" title="16px">
-<meta name="select:Body font size" content="18px" title="18px">
-<meta name="select:Body font size" content="20px" title="20px">
-<meta name="select:Body font size" content="22px" title="22px">
-<meta name="select:Body font size" content="24px" title="24px">
 <meta name="select:Description font size" content="12px" title="12px">
 <meta name="select:Description font size" content="10px" title="10px">
 <meta name="select:Description font size" content="11px" title="11px">
@@ -56,7 +51,14 @@ Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @
 <meta name="select:Description font size" content="15px" title="15px">
 <meta name="select:Description font size" content="16px" title="16px">
 <meta name="select:Description font size" content="17px" title="17px">
-<meta name="font:Footer font" content="Georgia">
+<meta name="select:Body font size" content="14px" title="14px">
+<meta name="select:Body font size" content="10px" title="10px">
+<meta name="select:Body font size" content="12px" title="12px">
+<meta name="select:Body font size" content="16px" title="16px">
+<meta name="select:Body font size" content="18px" title="18px">
+<meta name="select:Body font size" content="20px" title="20px">
+<meta name="select:Body font size" content="22px" title="22px">
+<meta name="select:Body font size" content="24px" title="24px">
 <meta name="select:Footer font size" content="11px" title="11px">
 <meta name="select:Footer font size" content="10px" title="10px">
 <meta name="select:Footer font size" content="12px" title="12px">
@@ -70,7 +72,6 @@ Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @
 <meta name="if:Show tags" content="0">
 <meta name="if:Show like and reblog buttons" content="0">
 <meta name="if:Show avatars for postnotes" content="0">
-<meta name="if:Disable fancyBox on mobile theme" content="0">
 <meta name="if:Show photo caption on index page" content="1">
 <meta name="if:Hide reblogged posts on index page" content="0">
 <meta name="if:Show only photo and photoset posts on index page" content="0">
@@ -100,6 +101,24 @@ Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @
 <!-- JQUERY -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
+<!-- PXU PHOTOSET -->
+<link href="https://static.tumblr.com/whvbcp2/ih2pns3zl/style_latest.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://static.tumblr.com/qudkd6d/Az6nkemqr/pxuphotoset.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('.photo-slideshow').pxuPhotoset({
+lightbox: false,
+rounded: false,
+gutter: '5px',
+photoset: '.photo-slideshow',
+photoWrap: '.photo-data',
+photo: '.pxu-photo'
+}, function() {
+// callback
+});
+});
+</script>
+
 <!-- FANCYBOX -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" media="screen">
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
@@ -112,12 +131,6 @@ $.fancybox.defaults.buttons = [
 'close'
 ];
 </script>
-
-<!-- PHOTOSET TO BE RESPONSIVE -->
-<script type="text/javascript">
-$('.photoset-grid').photosetGrid();
-</script>
-<script type="text/javascript" src="https://static.tumblr.com/wgijwsy/jgemkyt9x/jquery.photoset-grid.min.js"></script>
 
 <!-- GOOGLE ANALYTICS -->
 {block:IfGoogleAnalyticsID}
@@ -237,16 +250,18 @@ h1.post_title:after {background-color: #7cc576; border-radius: 30px; box-shadow:
 
 .tumblr_audio_player {max-width: 100%;}
 
-.audio iframe {/* making soundcloud fit to column */ max-width: 100%;}
+.audio iframe {max-width: 100%;}
 
-blockquote {border-left: 3px solid #bbb; padding-left: 10px; word-wrap: break-word;}
+.soundcloud_audio_player, .spotify_audio_player {height: 100%; width: 100%;}
+
+blockquote {border-left: 3px solid #bbb; margin-left: 10px; padding-left: 10px; word-wrap: break-word;}
 
 .quotation_mark {font-size: 60px; vertical-align: top;}
 
 /* POST META */
 .post_meta {border-top: 1px solid {color:Border}; color: {color:Post meta and notes text}; font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; letter-spacing: 0.1em; margin: 10px 0 50px 0; padding-top: 3px; text-transform: uppercase;}
 
-.tag_block a {background-color: #eee; border-radius: 3px; display: inline-block; font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.2em; line-height: 100%; margin: 3px 0; padding: 5px; -khtml-border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
+.tag_block a {background-color: {color:Post meta links background}; border-radius: 3px; display: inline-block; font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.2em; line-height: 100%; margin: 3px 0; padding: 5px; -khtml-border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
 
 /* BACK TO TOP BUTTON */
 .back_to_top {background: none; background-color: #111; border-radius: 3px; display: inline; display: none; height: 45px; margin: 0; position: fixed; bottom: 70px; right: 12px; text-align: center; width: 35px; z-index: 100;}
@@ -256,9 +271,9 @@ blockquote {border-left: 3px solid #bbb; padding-left: 10px; word-wrap: break-wo
 /* POST AND PAGE NAV */
 .nav_posts {font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0.1em; padding: 10px 0 5px 0; text-transform: uppercase;}
 
-.nav_posts .old {background-color: #eee; border-radius: 3px; float: left; padding: 5px 8px; -khtml-border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
+.nav_posts .old {background-color: {color:Post navigation links background}; border-radius: 3px; float: left; padding: 5px 8px; -khtml-border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
 
-.nav_posts .new {background-color: #eee; border-radius: 3px; float: right; padding: 5px 8px; -khtml-border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
+.nav_posts .new {background-color: {color:Post navigation links background}; border-radius: 3px; float: right; padding: 5px 8px; -khtml-border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;}
 
 /* POST NOTES */
 .notes {color: {color:Post meta and notes text}; font-family: {font:Body and description font}; font-size: 12px; margin: 50px 0 0 0; padding: 0;}
@@ -333,6 +348,11 @@ h1 {font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 400; letter
 
 div.npf_row {margin-left: 0 !important; margin-right: 0 !important; max-height: inherit !important;}
 
+/* PXU TWEAKS */
+.photo-slideshow .pxu-photo {line-height: 0;}
+
+.photo-slideshow .pxu-photo img {display: inline-block;}
+
 /* RESPONSIVE DESIGN */
 @media screen and (max-width:700px) {
 /* BASIC */
@@ -350,10 +370,6 @@ html, body {overflow-x: hidden !important; width: auto !important;}
 .sidebar_t18 {margin-top: 18px;}
 
 /* POSTS */
-{block:IfDisableFancyBoxOnMobileTheme}
-.nofancybox {display: none;}
-{/block:IfDisableFancyBoxOnMobileTheme}
-
 .post_meta, .caption_padding {padding-left: 5px; padding-right: 5px;}
 
 .title_indent {margin-left: 5px; margin-right: 5px;}
@@ -410,10 +426,10 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <p class="tag_line caption_padding">{Description}</p>
 
 <!-- DESKTOP NAV -->
-<div class="menu sidebar_b20 desktop_only"><a href="/">Home</a>{block:AskEnabled}<br><a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}<br><a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}{block:IfShowArchiveLink}<br><a href="/archive">Archive</a>{/block:IfShowArchiveLink}{block:HasPages}<br>{block:Pages}<a href="{URL}">{Label}</a><br>{/block:Pages}{/block:HasPages}</div><!-- .menu sidebar_b20 desktop_only --><div class="sidebar_b20 desktop_only"><form action="/search" method="get"><input type="text" name="q" value="{SearchQuery}" class="searchform"><input type="submit" value="Search"></form></div><!-- .sidebar_b20 desktop_only -->
+<div class="menu sidebar_b20 desktop_only"><a href="/">Home</a>{block:AskEnabled}<br><a href="/ask">{AskLabel}</a>{/block:AskEnabled}{block:SubmissionsEnabled}<br><a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}{block:IfShowArchiveLink}<br><a href="/archive">Archive</a>{/block:IfShowArchiveLink}{block:HasPages}<br>{block:Pages}<a href="{URL}">{Label}</a><br>{/block:Pages}{/block:HasPages}</div><!-- .menu sidebar_b20 desktop_only --><div class="sidebar_b20 desktop_only"><form action="/search" method="get"><input type="text" name="q" value="{SearchQuery}" class="searchform"><input type="submit" value="Search" style="margin-left: 5px;"></form></div><!-- .sidebar_b20 desktop_only -->
 
 <!-- SOCIAL LINKS -->
-<div class="sidebar_b20 sidebar_t18">{block:ifInstagramURL}<a href="{text:Instagram URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/I8apczbkm/instagram.svg" alt="Find me on Instagram" title="Find me on Instagram" class="social_links" width="30" height="30"></a>{/block:ifInstagramURL}{block:ifYouTubeURL}<a href="{text:YouTube URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/xkEpcz5cy/youtube.svg" alt="Find me on YouTube" title="Find me on YouTube" class="social_links" width="30" height="30"></a>{/block:ifYouTubeURL}{block:ifFacebookURL}<a href="{text:Facebook URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/183pcz2er/facebook.svg" alt="Find me on Facebook" title="Find me on Facebook" class="social_links" width="30" height="30"></a>{/block:ifFacebookURL}{block:ifTwitterURL}<a href="{text:Twitter URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/Tc3pcz2f0/twitter.svg" alt="Find me on Twitter" title="Find me on Twitter" class="social_links" width="30" height="30"></a>{/block:ifTwitterURL}{block:ifGooglePlusURL}<a href="{text:GooglePlus URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/288pcz2fb/googleplus.svg" alt="Find me on Google Plus" title="Find me on Google Plus" class="social_links" width="30" height="30"></a>{/block:ifGooglePlusURL}{block:ifPinterestURL}<a href="{text:Pinterest URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/DFfpcz2hj/pinterest.svg" alt="Find me on Pinterest" title="Find me on Pinterest" class="social_links" width="30" height="30"></a>{/block:ifPinterestURL}{block:ifFlickrURL}<a href="{text:Flickr URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/A7Opcz2e6/flickr.svg" alt="Find me on Flickr" title="Find me on Flickr" class="social_links" width="30" height="30"></a>{/block:ifFlickrURL}{block:if500pxURL}<a href="{text:500px URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/doNpcz2ck/500px.svg" alt="Find me on 500px" title="Find me on 500px" class="social_links" width="30" height="30"></a>{/block:if500pxURL}{block:ifLinkedInURL}<a href="{text:LinkedIn URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/mS2pl0gd1/webicon-linkedin.svg" alt="Find me on LinkedIn" title="Find me on LinkedIn" class="social_links" width="30" height="30"></a>{/block:ifLinkedInURL}{block:ifRSSURL}<a href="{text:RSS URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/ymypl0gdj/webicon-rss.svg" alt="Subscribe to RSS" title="Subscribe to RSS" class="social_links" width="30" height="30"></a>{/block:ifRSSURL}{block:ifSoundCloudURL}<a href="{text:SoundCloud URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/6R9pl0gdu/webicon-soundcloud.svg" alt="Find me on SoundCloud" title="Find me on SoundCloud" class="social_links" width="30" height="30"></a>{/block:ifSoundCloudURL}{block:ifVimeoURL}<a href="{text:Vimeo URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/eUWpl0ge5/webicon-vimeo.svg" alt="Find me on Vimeo" title="Find me on Vimeo" class="social_links" width="30" height="30"></a>{/block:ifVimeoURL}{block:ifKofiURL}<a href="{text:Kofi URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/JaYpgmsof/ko-fi.svg" alt="Find me on Ko-fi" title="Find me on Ko-fi" class="social_links" width="30" height="30"></a>{/block:ifKofiURL}</div><!-- .sidebar_b20 sidebar_t18 -->
+<div class="sidebar_b20 sidebar_t18">{block:ifInstagramURL}<a href="{text:Instagram URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/I8apczbkm/instagram.svg" alt="Find me on Instagram" title="Find me on Instagram" class="social_links" width="30" height="30"></a>{/block:ifInstagramURL}{block:ifYouTubeURL}<a href="{text:YouTube URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/xkEpcz5cy/youtube.svg" alt="Find me on YouTube" title="Find me on YouTube" class="social_links" width="30" height="30"></a>{/block:ifYouTubeURL}{block:ifFacebookURL}<a href="{text:Facebook URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/183pcz2er/facebook.svg" alt="Find me on Facebook" title="Find me on Facebook" class="social_links" width="30" height="30"></a>{/block:ifFacebookURL}{block:ifTwitterURL}<a href="{text:Twitter URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/Tc3pcz2f0/twitter.svg" alt="Find me on Twitter" title="Find me on Twitter" class="social_links" width="30" height="30"></a>{/block:ifTwitterURL}{block:ifGooglePlusURL}<a href="{text:GooglePlus URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/288pcz2fb/googleplus.svg" alt="Find me on Google Plus" title="Find me on Google Plus" class="social_links" width="30" height="30"></a>{/block:ifGooglePlusURL}{block:ifPinterestURL}<a href="{text:Pinterest URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/DFfpcz2hj/pinterest.svg" alt="Find me on Pinterest" title="Find me on Pinterest" class="social_links" width="30" height="30"></a>{/block:ifPinterestURL}{block:ifFlickrURL}<a href="{text:Flickr URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/A7Opcz2e6/flickr.svg" alt="Find me on Flickr" title="Find me on Flickr" class="social_links" width="30" height="30"></a>{/block:ifFlickrURL}{block:if500pxURL}<a href="{text:500px URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/doNpcz2ck/500px.svg" alt="Find me on 500px" title="Find me on 500px" class="social_links" width="30" height="30"></a>{/block:if500pxURL}{block:ifLinkedInURL}<a href="{text:LinkedIn URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/gsXpnmbeb/linkedin.svg" alt="Find me on LinkedIn" title="Find me on LinkedIn" class="social_links" width="30" height="30"></a>{/block:ifLinkedInURL}{block:ifRSSURL}<a href="{text:RSS URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/VHUpnmbfl/rss.svg" alt="Subscribe to RSS" title="Subscribe to RSS" class="social_links" width="30" height="30"></a>{/block:ifRSSURL}{block:ifSoundCloudURL}<a href="{text:SoundCloud URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/BbKpnmbgb/soundcloud.svg" alt="Find me on SoundCloud" title="Find me on SoundCloud" class="social_links" width="30" height="30"></a>{/block:ifSoundCloudURL}{block:ifVimeoURL}<a href="{text:Vimeo URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/680pnmbgv/vimeo.svg" alt="Find me on Vimeo" title="Find me on Vimeo" class="social_links" width="30" height="30"></a>{/block:ifVimeoURL}{block:ifKofiURL}<a href="{text:Kofi URL}" target="_blank"><img src="https://static.tumblr.com/whvbcp2/JaYpgmsof/ko-fi.svg" alt="Find me on Ko-fi" title="Find me on Ko-fi" class="social_links" width="30" height="30"></a>{/block:ifKofiURL}</div><!-- .sidebar_b20 sidebar_t18 -->
 </div><!-- #sidebar -->
 
 <div id="content">
@@ -448,10 +464,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- PHOTO -->
 {block:Photo}
 <div class="post">
-<a class="photopost nofancybox" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="100%" height="auto"></a>
-{block:IfDisableFancyBoxOnMobileTheme}
-<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="mobile_only" width="100%" height="auto">
-{/block:IfDisableFancyBoxOnMobileTheme}
+<a class="photopost" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="100%" height="auto"></a>
 {block:LinkURL}
 <p class="caption_padding" style="padding-top: 3px;"><a href="{LinkURL}" target="_blank">Find out more here &rarr;</a></p>
 {/block:LinkURL}
@@ -471,12 +484,11 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- PHOTOSET -->
 {block:Photoset}
 <div class="post">
-<div class="photoset-grid" data-layout="{PhotosetLayout}">{block:Photos}<a class="photopost nofancybox" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="100%" height="auto"></a>
-{block:IfDisableFancyBoxOnMobileTheme}
-<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="mobile_only" style="margin-bottom: 10px;" width="100%" height="auto">
-{/block:IfDisableFancyBoxOnMobileTheme}
+<div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}" style="display: inline-block;">
+{block:Photos}
+<div class="photo-data"><div class="pxu-photo"><a class="photopost" data-fancybox="{PostID}" href="{PhotoURL-HighRes}"><img src="{PhotoURL-500}" alt="{PhotoAlt}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></a></div><!-- .pxu-photo --></div><!-- .photo-data -->
 {/block:Photos}
-</div><!-- .photoset-grid -->
+</div><!-- .photo-slideshow -->
 
 <!-- CAPTION -->
 {block:IndexPage}
@@ -508,7 +520,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 <!-- AUDIO -->
 {block:Audio}
 <div class="post">
-<div class="caption_padding">{block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}{block:Caption}{Caption}{/block:Caption}</div>
+<div>{block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}</div><div class="caption_padding">{block:Caption}{Caption}{/block:Caption}</div>
 </div><!-- .post -->
 {/block:Audio}
 
@@ -577,7 +589,7 @@ div><!-- .caption_padding -->
 </div><!-- #content -->
 
 <!-- FOOTER -->
-<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40972/">Timeless theme (1.2)</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; Powered by <a href="https://www.tumblr.com">Tumblr</a></span></div><!-- .footer_inside --></div><!-- .footer -->
+<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40972/">Timeless theme (1.21)</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; Powered by <a href="https://www.tumblr.com">Tumblr</a></span></div><!-- .footer_inside --></div><!-- .footer -->
 </div><!-- #container -->
 
 <!-- SLIDING MENU -->
