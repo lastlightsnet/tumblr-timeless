@@ -3,7 +3,7 @@ Theme Name: Timeless
 Author: Joey J
 Author URI: http://lastlights.net/
 Description: Timeless is a clean double column theme elegantly handcrafted for bloggers and photographers alike. It’s responsive, hi-res and equipped with fancyBox3 (lightbox).
-Version: 1.22
+Version: 1.23
 Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @lastlightsnet), PXU Photoset Extended (MIT license), Zack Sultan for media resizing scripts, Font Awesome (SIL open font license), Google Fonts (SIL open font license)
 -->
 <html>
@@ -589,7 +589,7 @@ div><!-- .caption_padding -->
 </div><!-- #content -->
 
 <!-- FOOTER -->
-<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40972/">Timeless theme (1.22)</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; Powered by <a href="https://www.tumblr.com">Tumblr</a></span></div><!-- .footer_inside --></div><!-- .footer -->
+<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40972/">Timeless theme (1.23)</a> on <a href="https://www.tumblr.com">Tumblr</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; <a href="http://lastlights.net/theme-support/">Theme Support</a></span></div><!-- .footer_inside --></div><!-- .footer -->
 </div><!-- #container -->
 
 <!-- SLIDING MENU -->
