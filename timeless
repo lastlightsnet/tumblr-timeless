@@ -3,7 +3,7 @@ Theme Name: Timeless
 Author: Joey J
 Author URI: http://lastlights.net/
 Description: Timeless is a clean double column theme elegantly handcrafted for bloggers and photographers alike. It’s responsive, hi-res and equipped with fancyBox3 (lightbox).
-Version: 1.23
+Version: 1.24B
 Credits: jQuery (MIT license), fancyBox (GPLv3 license, open-sourced on GitHub @lastlightsnet), PXU Photoset Extended (MIT license), Zack Sultan for media resizing scripts, Font Awesome (SIL open font license), Google Fonts (SIL open font license)
 -->
 <html>
@@ -187,12 +187,14 @@ a:hover {color: {color:Links hover}; text-decoration: none;}
 
 #container {margin: 0 auto; max-width: 760px;}
 
-#content {margin: 0 0 0 30.42%; padding: 25px 0 180px 27px; width: 66%;}
+#content {margin: 0 30.42% 0 0; padding: 25px 27px 180px 0; width: 66%;}
 
 /* SIDEBAR */
-#sidebar {border-right: 1px solid {color:Border}; float: left; height: 100%; letter-spacing: 0.1em; padding: 30px 26px 30px 0; {block:IfFixSidebar}position: sticky; position: -webkit-sticky;{/block:IfFixSidebar} text-align: right; top: 0; width: 27%; z-index: 1;}
+#sidebar {border-left: 1px solid {color:Border}; float: right; height: 100%; letter-spacing: 0.1em; padding: 30px 0 30px 26px; {block:IfFixSidebar}position: sticky; position: -webkit-sticky;{/block:IfFixSidebar} text-align: left; top: 0; width: 27%; z-index: 1;}
 
-.self {{block:IfUseCircleAvatar}margin-right: -10px;{/block:IfUseCircleAvatar}}
+.self {{block:IfUseCircleAvatar}margin-left: -5px;{/block:IfUseCircleAvatar}}
+
+.logo {height: 96px; width: 96px;}
 
 .blog_title {font-family: {font:Blog title font}; font-size: {select:Title font size}; letter-spacing: 0.15em; margin-top: 15px;}
 
@@ -204,7 +206,7 @@ a:hover {color: {color:Links hover}; text-decoration: none;}
 
 .sidebar_b20 {margin-bottom: 20px;}
 
-.social_links {margin-bottom: 2px; margin-left: 8px;}
+.social_links {margin-bottom: 2px; margin-right: 8px;}
 
 /* SEARCH FORM */
 input[type="submit"] {background-color: #4971af; border: none; border-radius: 2px; color: #fff; cursor: pointer; font-family: Arial, Helvetica, sans-serif; font-size: 13px; letter-spacing: 0.05em; padding: 5px 10px; text-transform: uppercase;}
@@ -336,7 +338,7 @@ blockquote {border-left: 3px solid #bbb; margin-left: 10px; padding-left: 10px; 
 
 /* IE10+ */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-#content {margin: 0 0 0 231.2px;}
+#content {margin: 0 231.2px 0 0;}
 
 #sidebar {{block:IfFixSidebar}position: fixed;{/block:IfFixSidebar} width: 205px;}
 
@@ -358,12 +360,12 @@ div.npf_row {margin-left: 0 !important; margin-right: 0 !important; max-height: 
 /* BASIC */
 html, body {overflow-x: hidden !important; width: auto !important;}
 
-#content {margin-left: 0; padding-left: 0; width: 100%;}
+#content {margin-right: 0; padding-right: 0; width: 100%;}
 
 /* SIDEBAR */
-#sidebar {float: none; padding-bottom: 0; padding-right: 0; {block:IfFixSidebar}position: inherit;{/block:IfFixSidebar} text-align: center; width: 100%;}
+#sidebar {float: none; padding-bottom: 0; padding-left: 0; {block:IfFixSidebar}position: inherit;{/block:IfFixSidebar} text-align: center; width: 100%;}
 
-.self {margin-right: 0;}
+.self {margin-left: 0;}
 
 .social_links {margin-left: 4px; margin-right: 4px;}
 
@@ -414,7 +416,7 @@ div.npf_row {margin-left: -5px !important; margin-right: -5px !important;}
 
 <!-- LOGO -->
 {block:ShowAvatar}
-<div class="self"><a href="/"><img src="{PortraitURL-128}" alt="{Title}" title="{Title}" {block:IfUseCircleAvatar}style="border-radius: 50%;"{/block:IfUseCircleAvatar} width="96" height="96"></a></div><!-- .self -->
+<div class="self"><a href="/"><img src="{PortraitURL-128}" class="logo" alt="{Title}" title="{Title}" {block:IfUseCircleAvatar}style="border-radius: 50%;"{/block:IfUseCircleAvatar}></a></div><!-- .self -->
 {/block:ShowAvatar}
 
 <!-- TITLE -->
@@ -589,7 +591,8 @@ div><!-- .caption_padding -->
 </div><!-- #content -->
 
 <!-- FOOTER -->
-<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40972/">Timeless theme (1.23)</a> on <a href="https://www.tumblr.com">Tumblr</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; <a href="http://lastlights.net/theme-support/">Theme Support</a></span></div><!-- .footer_inside --></div><!-- .footer -->
+<div class="footer"><div class="footer_inside"><span>© {CopyrightYears} <a href="/">{Title}</a> &bull; <a href="https://www.tumblr.com/theme/40972/">Timeless theme (
+B)</a> on <a href="https://www.tumblr.com">Tumblr</a> by <a href="http://lastlights.net/">LASTLIGHTS.NET</a> &bull; <a href="http://lastlights.net/theme-support/">Theme Support</a></span></div><!-- .footer_inside --></div><!-- .footer -->
 </div><!-- #container -->
 
 <!-- SLIDING MENU -->
